@@ -103,8 +103,6 @@ namespace TransactionWebApi.Controllers
                 cell.SetCellValue((transaction.TransactionStatus.HasValue && transaction.TransactionStatus.Value ? "Active" : "Inactive").ToString());
 
                 i++;
-
-
             }
 
 
