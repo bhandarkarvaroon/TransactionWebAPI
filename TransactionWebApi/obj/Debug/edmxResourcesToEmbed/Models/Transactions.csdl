@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TransactionsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExternalTransactionId" Type="Int32" />
+    <Property Name="TransactionType" Type="Int32" />
+    <Property Name="CashAmount" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="NAV" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="NAVDate" Type="DateTime" Precision="3" />
+    <Property Name="FundId" Type="Int32" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="TransactionStatus" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="TransactionsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+  </EntityContainer>
+</Schema>
